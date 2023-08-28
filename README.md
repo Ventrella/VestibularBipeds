@@ -1,6 +1,6 @@
 # VestibularBipeds
 
-Here's a video aboujt the project:
+Here's a video about the project:
 https://vimeo.com/847792138
 
 This project is described in the following paper:
