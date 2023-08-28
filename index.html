@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Vestibular Bipeds
+		</title>		
+        <link rel="stylesheet" type="text/css" href="css/Vestibular.css">                        
+        <meta charset  = "utf-8"/>
+        <meta property = "og:title" content = "Vestibular Bipeds">
+	</head>
+	<body 
+		onload   = "vestibular = new Vestibular(); vestibular.initialize();"
+		onresize = "vestibular.resize();"		
+	>
+	
+		<!-- ------------------------------------------------------------------ -->
+		<!-- create the html canvas and some other global variables             -->
+		<!-- the canvas width and height are determined elsewhere...            -->
+		<!-- ------------------------------------------------------------------ -->
+        <canvas id = "Canvas"></canvas>
+		<script>
+            var canvasID = document.getElementById( 'Canvas' );
+            var canvas = canvasID.getContext( '2d' );
+		</script>        
+
+		<!-- -------------------------------------------------------------- -->
+		<!-- The javaScript is loaded here...                        		-->
+		<!-- -------------------------------------------------------------- -->
+		<!--<script type = "text/javascript" src = "js/Math.js" 			></script>-->
+		<script type = "text/javascript" src = "js/MathConstants.js"	></script>
+		<script type = "text/javascript" src = "js/Vector2D.js" 		></script>
+		<script type = "text/javascript" src = "js/Vector3D.js"        	></script>
+		<script type = "text/javascript" src = "js/Orientation.js"    	></script>
+		<script type = "text/javascript" src = "js/Synthesizer.js" 		></script>
+		<script type = "text/javascript" src = "js/World.js"          	></script>
+		<script type = "text/javascript" src = "js/Creature.js"   		></script>
+		<script type = "text/javascript" src = "js/Camera.js"          	></script>
+		<script type = "text/javascript" src = "js/GA.js"              	></script>
+		<script type = "text/javascript" src = "js/Target.js"      		></script>
+		<script type = "text/javascript" src = "js/Simulation.js"		></script> 
+		
+		<!-- ------------------------------------------------------------------ -->
+		<!-- The main panel contains all the widgets, etc.                   	-->
+		<!-- ------------------------------------------------------------------ -->
+        <div id = "mainPanel">
+            <div id = "mainTitle">
+                Evolving Vestibular Bipedal Locomotion with Point-Mass Tetrahedra
+                <br>
+                <small><small>by Jeffrey Ventrella</small></small>
+                <br>
+                <br>
+                <a href = "http://ventrella.com/vestibular-bipeds/paper.pdf" >Read the paper</a> 
+                <br>
+                <small>(to be published in Artificial Life, 2023, MIT Press)</small>
+
+
+            </div> 
+            
+			<!-- ------------------------------------------------------------ -->
+			<!-- control panel                                                -->
+			<!-- ------------------------------------------------------------ -->
+			<div id="controlPanel" class = "basicPanel">      
+				<div id = "preset" class = "textClass" >
+					<br>
+					Choose a pre-evolved creature
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					If it falls over, restart:
+					<br>
+					<br>
+					<br>
+					<br>
+					(You may need to restart a few times)
+					<br>
+					<br>
+					You can also pick it up from the top and (try) to stand it up. Good luck.
+					<br>
+					<br>
+					<hr>
+					You can run the genetic algorithm to evolve a new locomotion strategy with a population of creatures based on the chosen creature type. 
+					<br>
+					<br>
+					<br>
+					<br>
+					When the genetic algorithm is done, it will show the most fit individual in the population. Or you can stop at any time and see it. 
+					<br>
+					<br>
+					<br>
+					<br>
+					There are few bugs that need to be squashed. For now, refresh the browser before running another GA session. More controls and features are planned, but don't hold your breath. This code will be made available on github.
+					<br>
+					<br>
+					<small>contact jeffrey@ventrella.com for info or to share ideas.</small>
+					<br>
+
+					
+					<!--
+					<br>
+					<br>
+					Number of GA iterations:
+					-->
+				</div>
+				
+
+				<!-- ------------------------------------------------------------ -->
+				<!-- slider1 and text input 1                                     -->
+				<!-- ------------------------------------------------------------ -->
+				<!--
+				<div id = "slider1Label" class = "labelClass" >value 1</div>
+				<input 
+					type            = "range" 
+					id              = "slider1"    
+					class           = "sliderClass"    
+					name            = "slider1"      
+					min				= 0
+					max				= 1000
+					step            = 1
+					autocomplete    = "off" 
+					oninput         = "vestibular.onSliderChanged( id )"
+				>
+				<input 
+					id 		= "input1"
+					class 	= "inputClass"
+					type	= "text" 
+					onkeyup = "vestibular.addToInputString( id, event )" 
+				>
+				-->
+
+				<!-- ------------------------------------------------------------ -->
+				<!-- slider 2 and text input 2                                    -->
+				<!-- ------------------------------------------------------------ -->
+				
+				<!--
+				<div id = "slider2Label" class = "labelClass" >value 2</div>
+				<input 
+					type            = "range" 
+					id              = "slider2"    
+					class           = "sliderClass"    
+					name            = "slider2"      
+					min				= 0
+					max				= 1000
+					step            = 1
+					autocomplete    = "off" 
+					oninput         = "vestibular.onSliderChanged( id )"
+				>
+				<input 
+					id 		= "input2"
+					class 	= "inputClass"
+					type	= "text" 
+					onkeyup = "vestibular.addToInputString( id, event )" 
+				>
+				-->
+
+				<!-- ------------------------------------------------------------ -->
+				<!-- slider 3 and text input 3                                    -->
+				<!-- ------------------------------------------------------------ -->
+				<!--
+				<div id = "slider3Label" class = "labelClass" >value 3</div>
+				<input 
+					type            = "range" 
+					id              = "slider3"    
+					class           = "sliderClass"    
+					name            = "slider3"      
+					min				= 0
+					max				= 1000
+					step            = 1
+					autocomplete    = "off" 
+					oninput         = "vestibular.onSliderChanged( id )"
+				>
+				<input 
+					id 		= "input3"
+					class 	= "inputClass"
+					type	= "text" 
+					onkeyup = "vestibular.addToInputString( id, event )" 
+				>
+				-->
+
+				<!--
+				<button id = "tet1button"   class = "buttonClass" onmousedown  = "vestibular.onButtonSelected( id );" >1 tet  			</button>   
+				<button id = "tet2button"   class = "buttonClass" onmousedown  = "vestibular.onButtonSelected( id );" >2 tets 			</button>   
+				<button id = "tet3button"   class = "buttonClass" onmousedown  = "vestibular.onButtonSelected( id );" >3 tets 			</button>   
+				<button id = "tet4button"   class = "buttonClass" onmousedown  = "vestibular.onButtonSelected( id );" >4 tets 			</button>   
+				<button id = "tet5button"   class = "buttonClass" onmousedown  = "vestibular.onButtonSelected( id );" >5 tets 			</button>   
+				-->
+				
+				<button id = "tet1BipedButton"  class = "buttonClass" onmousedown  = "vestibular.onButtonSelected( id );" >1-tet biped 	</button>   
+				<button id = "tet2BipedButton"  class = "buttonClass" onmousedown  = "vestibular.onButtonSelected( id );" >2-tet biped 	</button>   
+				<button id = "tet3BipedButton"  class = "buttonClass" onmousedown  = "vestibular.onButtonSelected( id );" >3-tet biped 	</button>   
+				<button id = "tet4BipedButton"  class = "buttonClass" onmousedown  = "vestibular.onButtonSelected( id );" >4-tet biped 	</button>   
+				<button id = "tet5BipedButton"  class = "buttonClass" onmousedown  = "vestibular.onButtonSelected( id );" >5-tet biped 	</button>   
+				<button id = "tet1TripedButton" class = "buttonClass" onmousedown  = "vestibular.onButtonSelected( id );" >1-tet triped	</button>   
+				<button id = "tet2TripedButton" class = "buttonClass" onmousedown  = "vestibular.onButtonSelected( id );" >2-tet triped	</button>   
+				<button id = "tet3TripedButton" class = "buttonClass" onmousedown  = "vestibular.onButtonSelected( id );" >3-tet triped	</button>   
+				<button id = "tet4TripedButton" class = "buttonClass" onmousedown  = "vestibular.onButtonSelected( id );" >4-tet triped	</button>   
+				<button id = "tet5TripedButton" class = "buttonClass" onmousedown  = "vestibular.onButtonSelected( id );" >5-tet triped	</button>   				
+				<button id = "restartButton" 	class = "buttonClass" onmousedown  = "vestibular.onButtonSelected( id );" >Restart		</button>  
+				<button id = "evolveButton"  	class = "buttonClass" onmousedown  = "vestibular.onButtonSelected( id );" >Evolve!		</button>  
+				<button id = "stopButton"   	class = "buttonClass" onmousedown  = "vestibular.onButtonSelected( id );" >Stop and see most fit</button>   
+				
+				<!-- 
+				<button id = "renderButton" class = "buttonClass" onmousedown  = "vestibular.toggleRendering ( id );" >Toggle rendering	</button>   
+				-->
+				
+				<!--
+				<button id = "fitButton"   	class = "buttonClass" onmousedown  = "vestibular.onButtonSelected( id );" >See most fit!</button>   
+				<button id = "stopButton"   class = "buttonClass" onmousedown  = "vestibular.onButtonSelected( id );" >Stop Evolving</button> 
+				-->  
+					        
+            </div> <!--controlPanel-->
+        </div>  <!--mainPanel-->
+	</body>
+</html>
