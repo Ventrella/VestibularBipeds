@@ -1,0 +1,147 @@
+body 
+{
+    background-color: #dddddd;
+}
+
+/* -------------------------------------------- */
+/* classes                                      */
+/* -------------------------------------------- */
+.basicPanel
+{ 
+    position:               absolute; 
+    background-color:       #cdcccb;
+    border-color:           #666659;       
+    border-style:           solid;
+    border-radius:          3px;
+    border-width:           1px; 
+    color:                  #005500; 
+    font-family:            "Arial";
+    font-size:              12px;
+}
+
+
+.buttonClass
+{
+    position:   absolute;
+    width:      60px;
+    height:     25px;
+    border-radius: 4px;
+    background-color: #eeecea;
+}
+
+.sliderClass
+{ 
+    position:               absolute;
+    width:					150px; 
+    height:					20px; 
+}
+
+.radioButtonClass
+{ 
+    position:               absolute;
+    width:					20px; 
+    height:					20px; 
+}
+
+.inputClass
+{ 
+    position:               absolute;
+    width:					100px; 
+    height:					20px; 
+}
+
+.textClass
+{ 
+    position:               absolute;
+    left:					10px;
+    width:					320px; 
+    height:					50px; 
+    color:                  #000000; 
+    font-family:            "Arial";
+    font-size:              14px;
+}
+
+.labelClass
+{ 
+    position:               absolute;
+    height:					50px; 
+    color:                  #005500; 
+    font-family:            "Arial";
+    font-size:              16px;
+}
+
+#mainPanel
+{
+    position:				absolute; 
+    top:					0px;
+    right:					0px;
+    width:					370px; 
+    height:					100%;
+    background-color:       #dddbd8;
+	border-left: 2px solid #666659;
+    color:                  #005500; 
+    font-family:            "Arial";
+    font-size:              12px;
+}
+
+#mainTitle
+{
+    position:			absolute; 
+    left:				10px;
+    top:				10px;
+    width:				300px; 
+    color:		 		#000000; 
+    font-family: 		"Arial";
+    font-size:  		16px;
+}
+
+#controlPanel
+{
+    position:				absolute; 
+    top:					130px;
+    left:					10px;
+    width:					350px; 
+    height:					650px;
+    background-color:       #efedeb;
+    color:                  #005500; 
+    font-family:            "Arial";
+    font-size:              12px;
+}
+
+#slider1Label 	{ left: 10px; top: 500px; }
+#slider2Label 	{ left: 10px; top: 550px; }
+#slider3Label 	{ left: 10px; top: 600px; }
+
+#slider1		{ left: 10px; top: 515px; }
+#slider2		{ left: 10px; top: 565px; }
+#slider3		{ left: 10px; top: 615px; }
+
+#input1 		{ left: 170px; top: 520px; }
+#input2 		{ left: 170px; top: 570px; }
+#input3 		{ left: 170px; top: 620px; }
+
+#tet1BipedButton { left:  10px; top: 50px; height: 40px; }
+#tet2BipedButton { left:  70px; top: 50px; height: 40px; }
+#tet3BipedButton { left: 130px; top: 50px; height: 40px; }
+#tet4BipedButton { left: 190px; top: 50px; height: 40px; }
+#tet5BipedButton { left: 250px; top: 50px; height: 40px; }
+
+#tet1TripedButton{ left:  10px; top: 100px; height: 40px; }
+#tet2TripedButton{ left:  70px; top: 100px; height: 40px; }
+#tet3TripedButton{ left: 130px; top: 100px; height: 40px; }
+#tet4TripedButton{ left: 190px; top: 100px; height: 40px; }
+#tet5TripedButton{ left: 250px; top: 100px; height: 40px; }
+
+#restartButton 	{ left: 10px; top: 190px; width: 100px; }
+#evolveButton	{ left: 10px; top: 390px; }
+#stopButton		{ left: 10px; top: 485px; width: 160px; }
+#renderButton	{ left: 10px; top: 500px; width: 130px; }
+
+
+
+
+
+
+
+
+
